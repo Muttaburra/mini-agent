@@ -68,12 +68,33 @@ write_file_schema = {
     "strict": True
 }
 
+
+search_files_schema = {
+    "type": "function",
+    "name": "search_files",
+    "description": "Search for a keyword in UTF-8 text files in the agent workspace.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "keyword": {
+                "type": "string",
+                "description": "Keyword to search for in text files"
+            }
+        },
+        "required": ["keyword"],
+        "additionalProperties": False
+    },
+    "strict": True
+}
+
+
 import json
 
 tools = [
     calculate_schema,
     read_file_schema,
-    write_file_schema
+    write_file_schema,
+    search_files_schema
 ]
 
 if __name__ == "__main__":
