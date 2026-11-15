@@ -1,3 +1,5 @@
+from pathlib import Path
+
 
 def calculate(a: float, b: float, operation: str) -> float:
     # Annotations do not validate runtime inputs; bool is an int subclass.
@@ -22,28 +24,6 @@ def calculate(a: float, b: float, operation: str) -> float:
 
     raise ValueError(f"Unsupported operation: {operation}")
 
-
-if __name__ == "__main__":
-    print(calculate(10, 20, "add"))
-    print(calculate(10, 20, "subtract"))
-    print(calculate(10, 20, "multiply"))
-    print(calculate(10, 4, "divide"))
-
-    try:
-        print(calculate(10, 0, "divide"))
-    except ValueError as e:
-        print("Error:", e)
-
-    try:
-        print(calculate(10, 20, "power"))
-    except ValueError as e:
-        print("Error:", e)
-
-    print("Program finished")
-
-
-
-from pathlib import Path
 
 WORKSPACE = (
     Path(__file__).resolve().parent / "workspace"

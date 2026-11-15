@@ -88,7 +88,6 @@ search_files_schema = {
 }
 
 
-import json
 
 tools = [
     calculate_schema,
@@ -96,7 +95,3 @@ tools = [
     write_file_schema,
     search_files_schema
 ]
-
-if __name__ == "__main__":
-    for tool in tools:
-        print(tool["name"])
